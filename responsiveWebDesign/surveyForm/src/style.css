@@ -1,0 +1,90 @@
+body {
+    font-family: 'Work Sans', sans-serif;
+    margin: 0;
+    background-image: url("https://docs.google.com/uc?export=download&id=1Zd32epHcX_cfIiT_a9UtXUXPjIgRi8Q7");
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    background-attachment: fixed;
+}
+
+#title {
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+
+#description {
+    color: white;
+    font-style: italic;
+    text-align: center;
+}
+
+body:before {
+    content: "";
+    width: 100%;
+    min-height: 260vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(20, 90, 50, 0.75);
+    z-index: -1;
+}
+
+#container {
+    width: 75%;
+    margin: 10% auto;
+}
+
+main {
+    margin-top: 10%;
+    background-color: rgba(5, 58, 48, 0.8);
+    padding: 7%;
+    border-radius: 3%;
+}
+
+#survey-form {
+    display: flex;
+    flex-direction: column;
+}
+label {
+    color: white;
+    margin: 6px 5px;
+    font-size: 18px;
+}
+input {
+    margin: 2px 5px 20px 5px;
+    padding: 8px 22px;
+    border-radius: 5px;
+}
+#dropdown {
+    margin: 2px 5px 16px 5px;
+    padding: 8px 22px;
+    border-radius: 5px;
+}
+#radioButtons {
+    display: flex;
+    flex-direction: column;
+}
+#checkBoxes {
+    display: flex;
+    flex-direction: column;
+}
+label span {
+    font-size: 12px;
+}
+textarea {
+    padding: 8px 22px;
+    border-radius: 5px;
+}
+#submit {
+    margin-top: 16px;
+    padding: 10px;
+    color: white;
+    text-align: center;
+    background-color: rgba(34, 153, 84, 1);
+}
+
+footer {
+  margin: auto;
+}
