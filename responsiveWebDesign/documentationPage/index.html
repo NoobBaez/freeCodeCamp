@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Documentation Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="wrapper">
+        <nav id="navbar">
+            <header>
+                <h1>Tipos de datos y estructuras en JavaScript</h1>
+            </header>
+            <ul>
+                <li><a href="#Introduccion" class="nav-link">Introduccion</a></li>
+                <li><a href="#Tipado_Dinámico" class="nav-link">Tipado Dinámico</a></li>
+                <li><a href="#Estructuras_y_Tipos_Datos" class="nav-link">Estructuras y Tipos Datos</a></li>
+                <li><a href="#Valores_Primitivos" class="nav-link">Valores Primitivos</a></li>
+                <li><a href="#Objetos" class="nav-link">Objetos</a></li>
+                <li><a href="#Referencia" class="nav-link">Referencia</a></li>
+            </ul>
+        </nav>
+
+        <main id="main-doc">
+            <section class="main-section" id="Introduccion">
+                <header class="section-header">Introduccion</header>
+                <p>Todos los lenguajes de programación tienen estructuras de datos integradas, pero estas a menudo
+                    difieren de un lenguaje a otro. Este artículo intenta enumerar las estructuras de datos integradas
+                    disponibles en JavaScript y las propiedades que tienen. Estas se pueden utilizar para construir
+                    otras estructuras de datos. Siempre que es posible, se hacen comparaciones con otros lenguajes.</p>
+            </section>
+            <section class="main-section" id="Tipado_Dinámico">
+                <header class="section-header">Tipado Dinámico</header>
+                <p>JavaScript es un lenguaje débilmente tipado y dinámico. Las variables en JavaScript no están
+                    asociadas directamente con ningún tipo de valor en particular, y a cualquier variable se le puede
+                    asignar (y reasignar) valores de todos los tipos:</p>
+                <code>
+                    let foo = 42;    // foo ahora es un número
+                </code>
+                <code>
+                    foo     = 'bar'; // foo ahora es un string
+                </code>
+                <code>
+                foo = true; // foo ahora es un booleano
+                </code>
+
+            </section>
+            <section class="main-section" id="Estructuras_y_Tipos_Datos">
+                <header class="section-header">Estructuras y Tipos Datos</header>
+                <p>El último estándar ECMAScript define nueve tipos:</p>
+                <ul>
+                    <li>Seis tipos de datos primitivos, controlados por el operador typeof
+                        <ul>
+                            <li>Undefined: <code>typeof instance === "undefined"</code></li>
+                            <li>Boolean: <code>typeof instance === "boolean"</code></li>
+                            <li>Number: <code>typeof instance === "number"</code> </li>
+                            <li>String: <code>typeof instance === "string"</code> </li>
+                            <li>BigInt: <code>typeof instance === "bigint"</code> </li>
+                            <li>Symbol: <code>typeof instance === "symbol"</code> </li>
+                        </ul>
+                    </li>
+                    <li>Null: typeof instance === "object". Tipo primitivo especial que tiene un uso adicional para su
+                        valor: si el objeto no se hereda, se muestra null;</li>
+                    <li>Object: typeof instance === "object". Tipo estructural especial que no es de datos pero para
+                        cualquier instancia de objeto construido que también se utiliza como estructuras de datos: new
+                        Object, new Array, new Map, new Set, new WeakMap, new WeakSet, new Date y casi todo lo hecho con
+                        la palabra clave new;</li>
+                    <li>Function: una estructura sin datos, aunque también responde al operador typeof: typeof instance
+                        === "function". Esta simplemente es una forma abreviada para funciones, aunque cada constructor
+                        de funciones se deriva del constructor Object.</li>
+                </ul>
+                <p>Ten en cuenta que el único propósito valioso del uso del operador typeof es verificar el tipo de
+                    dato. Si deseamos verificar cualquier Tipo Estructural derivado de Object, no tiene sentido usar
+                    typeof para eso, ya que siempre recibiremos "object". La forma correcta de comprobar qué tipo de
+                    Objeto estamos usando es la palabra clave instanceof. Pero incluso en ese caso, puede haber
+                    conceptos erróneos.</p>
+            </section>
+            <section class="main-section" id="Valores_Primitivos">
+                <header class="section-header">Valores Primitivos</header>
+                <p>Todos los tipos, excepto los objetos, definen valores inmutables (es decir, valores que no se pueden
+                    cambiar). Por ejemplo (y a diferencia de C), las cadenas son inmutables. Nos referimos a los valores
+                    de estos tipos como "valores primitivos".</p>
+                <ul>
+                    <li>
+                        <h3>Tipo Boolean</h3>
+                        <p>Boolean representa una entidad lógica y puede tener dos valores: true y false. Consulta
+                            Boolean y Boolean para obtener más detalles.</p>
+                    </li>
+                    <li>
+                        <h3>Tipo Null</h3>
+                        <p>El tipo Null tiene exactamente un valor: null. Consulta null y Null para obtener más
+                            detalles.</p>
+                    </li>
+                    <li>
+                        <h3>Tipo Undefined</h3>
+                        <p>Una variable a la que no se le ha asignado un valor tiene el valor undefined. Consulta
+                            undefined y Undefined para obtener más detalles.</p>
+                    </li>
+                    <li>
+                        <h3>Tipo Number</h3>
+                        <p>ECMAScript tiene dos tipos numéricos integrados: Number y BigInt (ve más abajo).
+
+                            El tipo Number es un valor en formato binario de 64 bits de doble precisión IEEE 754
+                            (números entre -(253 - 1) y 253 - 1). Además de representar números de punto flotante, el
+                            tipo Number tiene tres valores simbólicos: +Infinity, -Infinity y NaN ("Not a Number" o No
+                            es un número).</p>
+                    </li>
+                    <li>
+                        <h3>Tipo BigInt</h3>
+                        <p>El tipo BigInt es un primitivo numérico en JavaScript que puede representar números enteros
+                            con precisión arbitraria. Con BigInts, puedes almacenar y operar de forma segura en números
+                            enteros grandes incluso más allá del límite seguro de enteros para Numbers.</p>
+                    </li>
+                    <li>
+                        <h3>Tipo String</h3>
+                        <p>El tipo String de JavaScript se utiliza para representar datos textuales. Es un conjunto de
+                            "elementos" de valores enteros sin signo de 16 bits. Cada elemento del String ocupa una
+                            posición en la cadena. El primer elemento está en el índice 0, el siguiente en el índice 1,
+                            y así sucesivamente. La longitud de una cadena es el número de elementos que contiene.
+
+                            A diferencia de algunos lenguajes de programación (tal como C), las cadenas de JavaScript
+                            son inmutables. Esto significa que una vez que se crea una cadena, no es posible
+                            modificarla.</p>
+                    </li>
+                    <li>
+                        <h3>Tipo Symbol</h3>
+                        <p>Un símbolo es un valor primitivo único e inmutable y se puede utilizar como clave de una
+                            propiedad de objeto (ve más abajo). En algunos lenguajes de programación, los símbolos se
+                            denominan "átomos".
+
+                            Para obtener más detalles, consulta Symbol y el contenedor de objetos Symbol en JavaScript.
+                        </p>
+                    </li>
+                </ul>
+            </section>
+            <section class="main-section" id="Objetos">
+                <header class="section-header">Objetos</header>
+                <p>En JavaScript, los objetos se pueden ver como una colección de propiedades. Con la sintaxis de objeto
+                    literal, se inicia un conjunto limitado de propiedades; luego se pueden agregar y eliminar
+                    propiedades. Los valores de propiedad pueden ser valores de cualquier tipo, incluidos otros objetos,
+                    lo que permite construir estructuras de datos complejas. Las propiedades se identifican mediante
+                    valores clave. Un valor clave es un valor de cadena o un símbolo.</p>
+            </section>
+            <section class="main-section" id="Referencia">
+                <header class="section-header">Referencia</header>
+                <p>Todo la documentacion en esta paguina es tomada de <a
+                        href="https://developer.mozilla.org/es/docs/Web/JavaScript/Data_structures"
+                        target='_black'>MDN</a></p>
+            </section>
+        </main>
+    </div>
+</body>
+
+</html>
