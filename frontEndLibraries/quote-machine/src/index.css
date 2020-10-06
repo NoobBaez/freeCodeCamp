@@ -1,0 +1,33 @@
+body {
+    margin: 0;
+}
+
+#quote-box {
+    background-color: white;
+    opacity: 0.9;
+    box-shadow: 4px 6px 5px gray;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) translateX(50%);
+}
+
+div #text {
+    margin-bottom: 10px;
+}
+
+#wraper-buttons {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#new-quote {
+    color: white;
+    margin-left: 15px;
+    background-color: black;
+    border: 0;
+}
+
+#new-quote:hover, #tweet-quote:hover {
+    position: relative;
+    top: 6px;
+}

@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "text": "Don’t spend time beating on a wall, hoping to transform it into a door.",
+        "author": "Coco Chanel",
+        "img": "https://docs.google.com/uc?export=download&id=1eHb3uBTQWi1HkX70Hjtpp3yxyWp-o732"
+    },
+    {
+        "id": 2,
+        "text": "Creativity is intelligence having fun.",
+        "author": "Albert Einstein",
+        "img": "https://docs.google.com/uc?export=download&id=1NqdZcUX3Hy0gLBJPVMQ3YUK_OfOWkxjK"
+    },
+    {
+        "id": 3,
+        "text": "Optimism is the one quality more associated with success and happiness than any other.",
+        "author": "Brian Tracy",
+        "img": "https://docs.google.com/uc?export=download&id=1RCabKHLZFp3fFoV_Lr3hW0TVS5bNii3n"
+    },
+    {
+        "id": 4,
+        "text": "I destroy my enemies when I make them my friends.",
+        "author": "Abraham Lincoln",
+        "img": "https://docs.google.com/uc?export=download&id=1b8uWhTPs-lU1LvtvcKCrq50CayOP2aEN"
+    },
+    {
+        "id": 5,
+        "text": "Genius is 1% inspiration, 99% perspiration.",
+        "author": "Thomas Edison",
+        "img": "https://docs.google.com/uc?export=download&id=1Pat8EcKUnNstyn8Ew8p6oDmq7v0SLwes"
+    },
+    {
+        "id": 6,
+        "text": "Never give up on a dream just because of the time it will take to accomplish it. The time will pass anyway.",
+        "author": "Earl Nightingale",
+        "img": "https://docs.google.com/uc?export=download&id=1fROQOfd6DKocdjZxteInTAIf0m2OcaL_"
+    },
+    {
+        "id": 7,
+        "text": "I never dream of success. I worked for it.",
+        "author": "Estee Lauder",
+        "img": "https://docs.google.com/uc?export=download&id=1yGhshBDDrzYM_Plt_IDMkDg8Z8SFWsRc"
+    },
+    {
+        "id": 8,
+        "text": "What you get by achieving your goals is not as important as what you become by achieving your goals.",
+        "author": "Henry David Thoreau",
+        "img": "https://docs.google.com/uc?export=download&id=1fEfu2hJbHwtzHI6SHCvnoONH0kn9BkAj"
+    },
+    {
+        "id": 9,
+        "text": "I find that the harder I work, the more luck I seem to have.",
+        "author": "Thomas Jefferson",
+        "img": "https://docs.google.com/uc?export=download&id=1EqQecOC_VTg9bT4R_S_pDH7ycaIG9r_L"
+    },
+    {
+        "id": 10,
+        "text": "Success is walking from failure to failure with no loss of enthusiasm.",
+        "author": "Winston Churchill",
+        "img": "https://docs.google.com/uc?export=download&id=1OYU6ZwoTTz6Y3duJtzcDjzq3Wy1flNO9"
+    }
+]
