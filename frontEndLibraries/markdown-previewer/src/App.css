@@ -1,0 +1,42 @@
+body {
+  margin: 0;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #7D7461;
+}
+
+.window {
+  border-style: solid;
+  border-color: #39304A;
+  border-radius: 5px;
+  margin: 1rem;
+  color: #B0A990;
+  box-shadow: 10px 10px 7px #202030;
+  background-color: #202030;
+}
+
+.window-header {
+  padding: 4px;
+  background-color: #39304A;
+}
+
+#editor {
+  min-height: 30vh;
+  min-width: 30vw;
+  padding: 15px;
+  outline: none;
+  color: #B0A990;
+  background-color: transparent;
+  border-style: groove;
+}
+
+#preview {
+  padding: 15px;
+  min-height: 50vh;
+  min-width: 50vw;
+}
