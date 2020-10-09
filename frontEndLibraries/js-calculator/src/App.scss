@@ -1,0 +1,332 @@
+@font-face {
+  font-family: 'LittleZombie';
+  src: url(./fonts/LittleZombie.ttf) format('trueType');
+}
+
+body{
+  font-family: LittleZombie;
+  font-size: 35px;
+  background-image: url('./chris-liverani-ViEBSoZH6M4-unsplash.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#calculator-machine {
+  display: grid;
+  height: 550px;
+  max-width: 35vw;
+  min-width: 250px;
+
+  padding: 25px 20px;
+  margin: auto;
+  grid-template-areas: "display display display display" "clean clean divide multiply" "seven eight nine subtract" "four five six add" "one two three equals" "zero zero decimal equals";
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  column-gap: 20px;
+  row-gap: 20px;
+  border: 9px solid black;
+  box-shadow: 15px 5px 10px rgba(0,0,0,0.5);
+  background-color:#0000ff;
+}
+
+#display {
+  grid-area: display;
+  height: 55px;
+  width: auto;
+  text-align: end;
+  padding: 0 10px 6px 0;
+  font-size: 40px;
+  border: 9px solid black;
+  border-radius: 5px;
+  background-color: #fdfefd;
+}
+
+.pad {
+  max-height: 200px;
+  font-weight: bold;
+  width: auto;
+  text-align: center;
+  border: 9px solid black;
+  border-radius: 5px;
+  
+}
+
+#one {
+  grid-area: one;
+
+  background-color: #3cff00;
+
+  -webkit-transform: skew(random(5) + deg, random(4) + deg);
+  -moz-transform: skew(random(5) + deg, random(5) + deg);
+  -ms-transform: skew(random(5) + deg, random(4) + deg);
+  transform: skew(random(5) + deg, random(5) + deg);
+
+  -webkit-transform: rotate(random(4) + deg);
+  -moz-transform: rotate(random(4) + deg);
+  -ms-transform: rotate(random(4) + deg);
+  transform: rotate(random(4) + deg);
+}
+
+#two {
+  grid-area: two;
+
+  background-color: #3cff00;
+
+  -webkit-transform: skew(random(5) + deg, random(5) + deg);
+  -moz-transform: skew(random(5) + deg, random(5) + deg);
+  -ms-transform: skew(random(5) + deg, random(4) + deg);
+  transform: skew(random(5) + deg, random(5) + deg);
+
+  -webkit-transform: rotate(random(4) + deg);
+  -moz-transform: rotate(random(4) + deg);
+  -ms-transform: rotate(random(4) + deg);
+  transform: rotate(random(4) + deg);
+}
+
+#three {
+  grid-area: three;
+
+  background-color: #3cff00;
+
+  -webkit-transform: skew(random(5) + deg, random(5) + deg);
+  -moz-transform: skew(random(5) + deg, random(4) + deg);
+  -ms-transform: skew(random(5) + deg, random(5) + deg);
+  transform: skew(random(5) + deg, random(4) + deg);
+
+  -webkit-transform: rotate(random(4) + deg);
+  -moz-transform: rotate(random(4) + deg);
+  -ms-transform: rotate(random(4) + deg);
+  transform: rotate(random(4) + deg);
+}
+
+#four {
+  grid-area: four;
+
+  background-color: #e30606;
+
+  -webkit-transform: skew(random(5) + deg, random(5) + deg);
+  -moz-transform: skew(random(5) + deg, random(4) + deg);
+  -ms-transform: skew(random(5) + deg, random(5) + deg);
+  transform: skew(random(5) + deg, random(4) + deg);
+
+  -webkit-transform: rotate(random(4) + deg);
+  -moz-transform: rotate(random(4) + deg);
+  -ms-transform: rotate(random(4) + deg);
+  transform: rotate(random(4) + deg);
+}
+
+#five {
+  grid-area: five;
+
+  background-color: #e30606;
+
+  -webkit-transform: skew(random(5) + deg, random(4) + deg);
+  -moz-transform: skew(random(5) + deg, random(5) + deg);
+  -ms-transform: skew(random(5) + deg, random(5) + deg);
+  transform: skew(random(5) + deg, random(4) + deg);
+
+  -webkit-transform: rotate(random(4) + deg);
+  -moz-transform: rotate(random(4) + deg);
+  -ms-transform: rotate(random(4) + deg);
+  transform: rotate(random(4) + deg);
+}
+
+#six {
+  grid-area: six;
+
+  background-color: #e30606;
+
+  -webkit-transform: skew(random(5) + deg, random(4) + deg);
+  -moz-transform: skew(random(5) + deg, random(5) + deg);
+  -ms-transform: skew(random(5) + deg, random(7) + deg);
+  transform: skew(random(5) + deg, random(5) + deg);
+
+  -webkit-transform: rotate(random(4) + deg);
+  -moz-transform: rotate(random(4) + deg);
+  -ms-transform: rotate(random(4) + deg);
+  transform: rotate(random(4) + deg);
+}
+
+#seven {
+  grid-area: seven;
+
+  background-color: #ffbd00;
+
+  -webkit-transform: skew(random(5) + deg, random(5) + deg);
+  -moz-transform: skew(random(5) + deg, random(5) + deg);
+  -ms-transform: skew(random(5) + deg, random(7) + deg);
+  transform: skew(random(5) + deg, random(7) + deg);
+
+  -webkit-transform: rotate(random(4) + deg);
+  -moz-transform: rotate(random(4) + deg);
+  -ms-transform: rotate(random(4) + deg);
+  transform: rotate(random(4) + deg);
+}
+
+#eight {
+  grid-area: eight;
+
+  background-color: #ffbd00;
+
+  -webkit-transform: skew(random(5) + deg, random(5) + deg);
+  -moz-transform: skew(random(5) + deg, random(5) + deg);
+  -ms-transform: skew(random(5) + deg, random(5) + deg);
+  transform: skew(random(5) + deg, random(5) + deg);
+
+  -webkit-transform: rotate(random(4) + deg);
+  -moz-transform: rotate(random(4) + deg);
+  -ms-transform: rotate(random(4) + deg);
+  transform: rotate(random(4) + deg);
+}
+
+#nine {
+  grid-area: nine;
+
+  background-color: #ffbd00;
+
+  -webkit-transform: skew(random(5) + deg, random(5) + deg);
+  -moz-transform: skew(random(5) + deg, random(5) + deg);
+  -ms-transform: skew(random(5) + deg, random(5) + deg);
+  transform: skew(random(5) + deg, random(5) + deg);
+
+  -webkit-transform: rotate(random(4) + deg);
+  -moz-transform: rotate(random(4) + deg);
+  -ms-transform: rotate(random(4) + deg);
+  transform: rotate(random(4) + deg);
+}
+
+#zero {
+  grid-area: zero;
+
+  background-color: #3cff00;
+
+  -webkit-transform: skew(random(5) + deg, random(5) + deg);
+  -moz-transform: skew(random(5) + deg, random(5) + deg);
+  -ms-transform: skew(random(5) + deg, random(5) + deg);
+  transform: skew(random(5) + deg, random(5) + deg);
+
+  -webkit-transform: rotate(random(4) + deg);
+  -moz-transform: rotate(random(4) + deg);
+  -ms-transform: rotate(random(4) + deg);
+  transform: rotate(random(4) + deg);
+}
+
+#clean {
+  grid-area: clean;
+
+  color: white;
+  background-color: #df03ad;
+
+  -webkit-transform: skew(random(5) + deg, random(5) + deg);
+  -moz-transform: skew(random(5) + deg, random(5) + deg);
+  -ms-transform: skew(random(5) + deg, random(5) + deg);
+  transform: skew(random(5) + deg, random(5) + deg);
+
+  -webkit-transform: rotate(random(4) + deg);
+  -moz-transform: rotate(random(4) + deg);
+  -ms-transform: rotate(random(4) + deg);
+  transform: rotate(random(4) + deg);
+}
+
+#divide {
+  grid-area: divide;
+
+  color: white;
+  background-color: #df03ad;
+
+  -webkit-transform: skew(random(5) + deg, random(5) + deg);
+  -moz-transform: skew(random(5) + deg, random(5) + deg);
+  -ms-transform: skew(random(5) + deg, random(5) + deg);
+  transform: skew(random(5) + deg, random(5) + deg);
+
+  -webkit-transform: rotate(random(4) + deg);
+  -moz-transform: rotate(random(4) + deg);
+  -ms-transform: rotate(random(4) + deg);
+  transform: rotate(random(4) + deg);
+}
+
+#multiply {
+  grid-area: multiply;
+
+  color: white;
+  background-color: #df03ad;
+
+  -webkit-transform: skew(random(5) + deg, random(5) + deg);
+  -moz-transform: skew(random(5) + deg, random(5) + deg);
+  -ms-transform: skew(random(5) + deg, random(5) + deg);
+  transform: skew(random(5) + deg, random(5) + deg);
+
+  -webkit-transform: rotate(random(4) + deg);
+  -moz-transform: rotate(random(4) + deg);
+  -ms-transform: rotate(random(4) + deg);
+  transform: rotate(random(4) + deg);
+}
+
+#subtract {
+  grid-area: subtract;
+
+  color: white;
+  background-color: #df03ad;
+
+  -webkit-transform: skew(random(5) + deg, random(5) + deg);
+  -moz-transform: skew(random(5) + deg, random(5) + deg);
+  -ms-transform: skew(random(5) + deg, random(5) + deg);
+  transform: skew(random(5) + deg, random(5) + deg);
+
+  -webkit-transform: rotate(random(4) + deg);
+  -moz-transform: rotate(random(4) + deg);
+  -ms-transform: rotate(random(4) + deg);
+  transform: rotate(random(4) + deg);
+}
+
+#add {
+  grid-area: add;
+
+  color: white;
+  background-color: #df03ad;
+
+  -webkit-transform: skew(random(5) + deg, random(5) + deg);
+  -moz-transform: skew(random(5) + deg, random(5) + deg);
+  -ms-transform: skew(random(5) + deg, random(5) + deg);
+  transform: skew(random(5) + deg, random(5) + deg);
+
+  -webkit-transform: rotate(random(4) + deg);
+  -moz-transform: rotate(random(4) + deg);
+  -ms-transform: rotate(random(4) + deg);
+  transform: rotate(random(4) + deg);
+}
+
+#decimal {
+  grid-area: decimal;
+
+  background-color: #acff00;
+
+  -webkit-transform: skew(random(5) + deg, random(5) + deg);
+  -moz-transform: skew(random(5) + deg, random(5) + deg);
+  -ms-transform: skew(random(5) + deg, random(5) + deg);
+  transform: skew(random(5) + deg, random(5) + deg);
+
+  -webkit-transform: rotate(random(4) + deg);
+  -moz-transform: rotate(random(4) + deg);
+  -ms-transform: rotate(random(4) + deg);
+  transform: rotate(random(4) + deg);
+}
+
+#equals {
+  grid-area: equals;
+
+  color: white;
+  background-color: #df03ad;
+
+  -webkit-transform: skew(random(5) + deg, random(5) + deg);
+  -moz-transform: skew(random(5) + deg, random(5) + deg);
+  -ms-transform: skew(random(5) + deg, random(5) + deg);
+  transform: skew(random(5) + deg, random(5) + deg);
+
+  -webkit-transform: rotate(random(4) + deg);
+  -moz-transform: rotate(random(4) + deg);
+  -ms-transform: rotate(random(4) + deg);
+  transform: rotate(random(4) + deg);
+}
+
