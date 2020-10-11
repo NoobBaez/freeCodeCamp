@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 
-import { updateTimerAsync, switchTimer } from '../redux/actions';
+import { updateTimerAsync, switchTimer, resetTimer } from '../redux/actions';
 
 const Timer = ({
     seconds,
@@ -10,7 +10,8 @@ const Timer = ({
     isTimerON,
     isSession,
     updateTimerAsync,
-    switchTimer
+    switchTimer,
+    resetTimer
 }) => {
 
     useEffect(() => {
@@ -18,18 +19,34 @@ const Timer = ({
         updateTimerAsync();
     }, [isTimerON, seconds, updateTimerAsync]);
 
+    useEffect(() => {
+        document.getElementById('beep').play();
+    }, [isSession])
+
     const handleClick = (event) => {
         event.preventDefault();
         switchTimer();
-    }
+    };
+
+    const handleClickReset = event => {
+        event.preventDefault();
+        const beep = document.getElementById('beep');
+        beep.pause();
+        beep.currentTime = 0;
+
+        resetTimer();
+    };
 
     const stageToShow = isSession ? session : breaK;
 
     return (
         <div id="timer">
-            <label id="timer-label">Session</label>
+            <label id="timer-label">{isSession ? 'Session' : 'Break'}</label>
             <div id="time-left">{`${stageToShow}:${seconds}`}</div>
-            <button id="start_stop" onClick={handleClick}>{isTimerON ? 'Pause' : 'Play'}</button>
+            <button id="start_stop" onClick={handleClick}>
+                {isTimerON ? 'Pause' : 'Play'}</button>
+            <button onClick={handleClickReset} id="reset" >Reset</button>
+            <audio id="beep" src="https://sampleswap.org/samples-ghost/LOOPING%20AMBIENCE/432[kb]mellow-beeps-into-atmosphere.wav.mp3" />
         </div>
     )
 };
@@ -56,7 +73,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         updateTimerAsync: () => dispatch(updateTimerAsync()),
-        switchTimer: () => dispatch(switchTimer())
+        switchTimer: () => dispatch(switchTimer()),
+        resetTimer: () => dispatch(resetTimer())
     }
 };
 

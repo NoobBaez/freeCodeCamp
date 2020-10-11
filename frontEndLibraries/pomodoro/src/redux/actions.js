@@ -2,6 +2,7 @@ export const UPDATE_TIMER = 'UPDATE_TIMER';
 export const SWITCH_TIMER = 'SWITCH_TIMER';
 export const INCREMENT_LENGTH = 'INCREMENT_LENGTH';
 export const DECREMENT_LENGTH = 'DECREMENT_LENGTH';
+export const RESET_TIMER = 'RESET_TIMER';
 
 const updateTimer = () => {
     return {
@@ -34,5 +35,11 @@ export const decrementLength = stage => {
     return {
         type: DECREMENT_LENGTH,
         stage
+    }
+};
+
+export const resetTimer = () => {
+    return {
+        type: RESET_TIMER
     }
 };
