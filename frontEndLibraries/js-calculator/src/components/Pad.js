@@ -1,12 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { setValue } from '../redux/reducer';
+import { setValue, setTotal } from '../redux/reducer';
 
-const Pad = ({ pad, setValue }) => {
+const Pad = ({ pad, setValue, setTotal }) => {
 
     const handleClick = () => {
-        setValue(pad.value);
+        if (pad.id === 'equals') {
+            setTotal();
+        } else {
+            setValue(pad.value);
+        }
     };
 
     return (
@@ -18,7 +22,8 @@ const Pad = ({ pad, setValue }) => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        setValue: (value) => dispatch(setValue(value))
+        setValue: (value) => dispatch(setValue(value)),
+        setTotal: () => dispatch(setTotal())
     }
 }
 

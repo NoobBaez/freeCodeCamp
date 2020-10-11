@@ -4,11 +4,10 @@ import { connect } from 'react-redux';
 const Display = ({ expression, value }) => {
     return (
         <div id="display">
-            <div id="expression" style={{ color: 'red', fontSize: '16px' }}>
-                {expression}
-            </div>
 
-            {value}
+            {expression || '0'}
+
+            {/* {value} */}
         </div>
     )
 };

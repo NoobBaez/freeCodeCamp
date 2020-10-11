@@ -1,3 +1,5 @@
+import formulaLogic from '../formulaLogin';
+
 const pads = [
     {
         id: 'zero',
@@ -57,14 +59,14 @@ const pads = [
     },
     {
         id: 'multiply',
-        value: 'X'
+        value: 'x'
     },
     {
         id: 'divide',
         value: '/'
     },
     {
-        id: 'clean',
+        id: 'clear',
         value: 'AC'
     }
 ];
@@ -72,8 +74,7 @@ const pads = [
 const initState = {
     pads,
     expression: '',
-    value: 0,
-    total: 0
+    number: '',
 }
 
 const SET_VALUE = 'SET_VALUE';
@@ -86,27 +87,63 @@ export const reducer = (state = initState, action) => {
                 return {
                     ...state,
                     expression: '',
-                    value: 0
+                    number: ''
                 }
             } else {
+                let expression = state.expression;
+                let number = state.number;
+
+                //operates on the result of the previous evaluation
+                if (/=/.test(expression)) expression = number;
+
+                //not allow a number to begin with multiple zeros
+                if (action.value === 0 && number === '0') return state;
+
+                if (['+', 'x', '/', '-'].includes(expression[expression.length - 1])) {
+
+                    if (expression[expression.length - 1] === '-' && action.value === '-') return state;
+
+                    if (/[x\/+]/.test(action.value)) {
+                        //find the operator's index
+                        let indexToEliminate = expression.search(/[/\+x]/)
+
+                        return {
+                            ...state,
+                            expression: expression.slice(0, indexToEliminate) + action.value,
+                            number: ''
+                        };
+                    }
+
+                }
+
+                //reset the number state when a operator is introduce
+                if (['+', '-', 'x', '/'].includes(action.value)) {
+                    return {
+                        ...state,
+                        expression: expression + action.value,
+                        number: ''
+                    }
+                };
+
+                //two "." in one number should not be accepted
+                if (/\./.test(number) && action.value === '.') return state;
+
                 return {
                     ...state,
-                    expression: state.expression + action.value,
-                    value: action.value
-                }
+                    expression: expression + action.value,
+                    number: number + action.value
+                };
             };
         case SET_TOTAL:
-            // const total = expression.split('').reduce((count, element) => {
-            //     if(parseInt(element)) return 
-            // }, 0);
-            
-            return state;
-
-
+            const total = formulaLogic(state.expression);
+            return {
+                ...state,
+                expression: total,
+                value: total
+            };
         default:
             return state;
     }
-
 };
 
 export const setValue = value => {
@@ -115,5 +152,11 @@ export const setValue = value => {
         value
     }
 }
+
+export const setTotal = () => {
+    return {
+        type: SET_TOTAL
+    }
+};
 
 export default reducer;

@@ -6,7 +6,7 @@
 body{
   font-family: LittleZombie;
   font-size: 35px;
-  background-image: url('./chris-liverani-ViEBSoZH6M4-unsplash.jpg');
+  background-image: url('./image/chris-liverani-ViEBSoZH6M4-unsplash.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -17,7 +17,6 @@ body{
   height: 550px;
   max-width: 35vw;
   min-width: 250px;
-
   padding: 25px 20px;
   margin: auto;
   grid-template-areas: "display display display display" "clean clean divide multiply" "seven eight nine subtract" "four five six add" "one two three equals" "zero zero decimal equals";
@@ -37,8 +36,10 @@ body{
   text-align: end;
   padding: 0 10px 6px 0;
   font-size: 40px;
+  overflow: hidden;
   border: 9px solid black;
   border-radius: 5px;
+  box-shadow: 5px 1.5px 10px rgba(0,0,0,0.5);
   background-color: #fdfefd;
 }
 
@@ -49,14 +50,18 @@ body{
   text-align: center;
   border: 9px solid black;
   border-radius: 5px;
-  
+  box-shadow: 5px 1.5px 10px rgba(0,0,0,0.5);
+}
+
+.pad:hover {
+  color: white;
 }
 
 #one {
   grid-area: one;
 
   background-color: #3cff00;
-
+  
   -webkit-transform: skew(random(5) + deg, random(4) + deg);
   -moz-transform: skew(random(5) + deg, random(5) + deg);
   -ms-transform: skew(random(5) + deg, random(4) + deg);
@@ -212,7 +217,7 @@ body{
   transform: rotate(random(4) + deg);
 }
 
-#clean {
+#clear {
   grid-area: clean;
 
   color: white;
