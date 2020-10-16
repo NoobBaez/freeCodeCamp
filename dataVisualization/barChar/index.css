@@ -1,5 +1,22 @@
-
+body {
+    height: 100vh;
+    background: rgb(43, 193, 123);
+    background: linear-gradient(0deg, rgba(43, 193, 123, 1) 16%, rgba(255, 255, 255, 1) 100%);
+}
 
 #bar-char {
-    background-color: gainsboro;
+    background-color: white;
+}
+
+.bar:hover {
+    fill: red;
+}
+
+svg {
+    border: 0.5px solid black;
+    display: block;
+    margin: auto;
+    -webkit-box-shadow: 18px 21px 19px 5px rgba(0, 0, 0, 0.45);
+    -moz-box-shadow: 18px 21px 19px 5px rgba(0, 0, 0, 0.45);
+    box-shadow: 18px 21px 19px 5px rgba(0, 0, 0, 0.45);
 }
