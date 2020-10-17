@@ -1,11 +1,13 @@
 body {
     height: 100vh;
+    font-family: 'Monda', sans-serif;
     background: rgb(43, 193, 123);
     background: linear-gradient(0deg, rgba(43, 193, 123, 1) 16%, rgba(255, 255, 255, 1) 100%);
 }
 
 #bar-char {
     background-color: white;
+    margin-top: 100px
 }
 
 .bar:hover {
@@ -19,4 +21,34 @@ svg {
     -webkit-box-shadow: 18px 21px 19px 5px rgba(0, 0, 0, 0.45);
     -moz-box-shadow: 18px 21px 19px 5px rgba(0, 0, 0, 0.45);
     box-shadow: 18px 21px 19px 5px rgba(0, 0, 0, 0.45);
+}
+
+#tooltip {
+    position: absolute;
+    text-align: left;
+    width: 100px;
+    height: 40px;
+    min-height: 20px;
+    padding: 2px;
+    font: 12px sans-serif;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 2px solid red;
+    color: #5E99BD;
+    border-radius: 8px 8px 8px 8px;
+    pointer-events: none;
+    padding: 11px;
+   }
+
+   #tooltip:before {
+    box-sizing: border-box;
+    display: inline;
+    font-size: 18px;
+    width: 100%;
+    line-height: 1;
+    color: red;
+    content: "\25BC";
+    position: absolute;
+    text-align: center;
+    top: 100%;
+    left: -2px;
 }
