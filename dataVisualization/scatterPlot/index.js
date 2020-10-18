@@ -5,7 +5,6 @@ axios.get("https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/m
     });
 
 const draw = (dataset) => {
-
     const svgWidth = 1000
     const svgHeight = svgWidth / 2;
     const svgPadding = svgWidth * 0.05;
@@ -13,7 +12,9 @@ const draw = (dataset) => {
     let body = d3.select("body");
 
     //add title
-    body.append("h1").attr("id", "title").text("Doping in Professional Bicycle Racing")
+    body.append("h1").attr("id", "title").text("Doping in Professional Bicycle Racing");
+    //add subtitle
+    body.append("p").attr("id", "legend").text("35 Fastest times up Alpe d'Huez")
 
     let svg = body
         .append("svg")
@@ -23,7 +24,6 @@ const draw = (dataset) => {
 
     //scale
     let yScale = d3.scaleLinear()
-        .domain([d3.min(dataset, (d) => d.Seconds), d3.max(dataset, (d) => d.Seconds - 1)])
         .range([svgPadding, svgHeight - svgPadding]);
 
     let xScale = d3.scaleLinear()
@@ -43,10 +43,10 @@ const draw = (dataset) => {
             .style("opacity", 1);
 
         d3.select("#tooltip")
-            .attr("data-year", mouse.x)
+            .attr("data-year", data.Year)
             .html(`
             <p>${data.Name}: ${data.Nationality}</p>
-            <p>Year: ${data.Year}, Time: ${data.Time}</p>
+            <p>Year: ${data.Year}, Time: ${d3.timeFormat("%M:%S")(data.Time)}</p>
             <p>${data.Doping}</p>
             `)
             .style("opacity", 1)
@@ -62,25 +62,76 @@ const draw = (dataset) => {
             .style("opacity", 0);
     }
 
+    //axis
+    let xAxis = d3.axisBottom().scale(xScale).tickFormat(d3.format("Y"));
+    let yAxis = d3.axisLeft().scale(yScale).tickFormat(d3.timeFormat("%M:%S"))
+
+    dataset.forEach(d => {
+        var parsedTime = d.Time.split(':');
+        d.Time = new Date(Date.UTC(1970, 0, 1, 0, parsedTime[0], parsedTime[1]));
+    });
+
+    yScale.domain(d3.extent(dataset, (d) => d.Time));
+
+    //label
+    const labelData = ["No doping allegations", "Riders with doping allegations"];
+    svg.selectAll("rect")
+        .data(labelData)
+        .enter()
+        .append("rect")
+        .attr("x", svgWidth / 2 + 250 + "px")
+        .attr("y", (_d, i) => i * 25 + svgHeight / 2.5 + "px")
+        .attr("width", "15")
+        .attr("height", "15")
+        .style("stroke", "black")
+        .attr("fill", (d) => {
+            if (!d.includes("No")) {
+                return "#2ec4b6";
+            } else {
+                return "#ff9f1c";
+            }
+        });
+
+    svg.selectAll("label")
+        .append("div")
+        .attr("id", "label")
+        .data(labelData)
+        .enter()
+        .append("text")
+        .attr("x", (d) => svgWidth / 2 + 270 + "px")
+        .attr("y", (_d, i) => i * 25 + svgHeight / 2.4 + "px")
+        .text((d) => d)
+        .attr("text-anchor", "left")
+        .style("alignment-baseline", "middle");
+
     //circles / dots
-    let circle = svg
+    svg
         .selectAll("circle")
         .data(dataset)
         .enter()
         .append("circle")
         .attr("class", "dot")
         .attr("data-xvalue", (d) => d.Year)
-        .attr("data-yvalue", (d) => d.Time)
+        .attr("data-yvalue", (d) => d.Time.toISOString())
         .attr("cx", (d) => xScale(d.Year))
-        .attr("cy", (d) => yScale(d.Seconds))
-        .attr("r", 5)
+        .attr("cy", (d) => yScale(d.Time))
+        .attr("r", 0)
+        .attr("fill", (d) => {
+            if (d.Doping) {
+                return "#2ec4b6";
+            } else {
+                return "#ff9f1c";
+            }
+        })
         .on("mouseover", onMouseOver)
-        .on("mouseout", onMouseOut);
+        .on("mouseout", onMouseOut)
+        .transition()
+        .ease(d3.easeElastic)
+        .delay((_d, i) => { return i * 65 })
+        .duration(250)
+        .attr("r", 7);
 
-    //axis
-    let xAxis = d3.axisBottom().scale(xScale).tickFormat(d3.format("Y"));
-    let yAxis = d3.axisLeft().scale(yScale) //.tickFormat(d3.timeFormat("%M:%S"));
+    svg.append("g").attr("transform", `translate(${svgPadding}, 0)`).attr("id", "y-axis").call(yAxis);
+    svg.append("g").attr("transform", `translate(0, ${svgHeight - svgPadding})`).attr("id", "x-axis").call(xAxis);
 
-    svg.append("g").attr("transform", `translate(${svgPadding}, 0)`).attr("id", "x-axis").call(yAxis);
-    svg.append("g").attr("transform", `translate(0, ${svgHeight - svgPadding})`).attr("id", "y-axis").call(xAxis);
 }
