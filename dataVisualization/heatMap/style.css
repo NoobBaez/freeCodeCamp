@@ -1,0 +1,7 @@
+.cell {
+    border:10px solid black;
+}
+
+svg .cell  {
+    border: 5px solid black;
+}
