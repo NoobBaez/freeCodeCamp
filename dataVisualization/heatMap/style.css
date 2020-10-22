@@ -1,7 +1,39 @@
-.cell {
-    border:10px solid black;
+body {
+    font-family: 'Commissioner', sans-serif;
+    font-size: 20px;
+    text-align: center;
+    margin: 0;
 }
 
-svg .cell  {
-    border: 5px solid black;
+#tooltip {
+    position: absolute;
+    text-align: center;
+    font: 16px sans-serif;
+    color: #FFF;
+    background-color: #000;
+    border: 2px solid #fff;
+    border-radius: 8px 8px 8px 8px;
+    pointer-events: none;
+    padding: 11px;
+}
+
+#heatMap {
+    margin: 0 100px;
+}
+
+#x-axis {
+    font-size: 18px;
+}
+
+#y-axis {
+    font-size: 18px;
+}
+
+#legend {
+    font-size: 18px;
+}
+
+.cell:hover {
+    stroke-width: 2;
+    stroke: black;
 }
