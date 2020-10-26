@@ -27,7 +27,7 @@ function drawMap({ usa, edu }) {
     body.append("p").text("Percentage of adults age 25 and older with a bachelor's degree or higher (2010-2014)").attr("id", "description");
 
     //legen
-    const wL = 330;
+    const wL = 630;
     const hL = 28;
     const paddingL = 5;
 
@@ -43,12 +43,12 @@ function drawMap({ usa, edu }) {
         .data(legendData)
         .enter()
         .append("rect")
-        .attr("width", 30)
+        .attr("width", 60)
         .attr("height", 8)
-        .attr("x", (_d, i) => i * 30 + 10)
+        .attr("x", (_d, i) => i * 60 + 10)
         .attr("fill", (d) => setColor(d))
 
-    let xScale = d3.scaleLinear().range([10, 30 * 9]).domain([3, 66]);
+    let xScale = d3.scaleLinear().range([10, 60 * 9]).domain([3, 66]);
 
     let xAxis = d3.axisBottom(xScale)
         .tickSize(16)
@@ -71,8 +71,6 @@ function drawMap({ usa, edu }) {
             .style("opacity", 0.8);
 
         const result = edu.find(e => e.fips === data.id);
-
-        if (!result) return;
 
         toolTip
             .attr("data-education", result.bachelorsOrHigher)
@@ -125,15 +123,15 @@ function drawMap({ usa, edu }) {
         });
 
     states
-        svg.append("g")
-            .selectAll("path")
-            .data(states)
-            .enter()
-            .append("path")
-            .attr("d", path)
-            .style("stroke", "white")
-            .style("fill", "none")
-            .style("strokeLinejoin", "round")
+    svg.append("g")
+        .selectAll("path")
+        .data(states)
+        .enter()
+        .append("path")
+        .attr("d", path)
+        .style("stroke", "white")
+        .style("fill", "none")
+        .style("strokeLinejoin", "round")
 };
 
 
