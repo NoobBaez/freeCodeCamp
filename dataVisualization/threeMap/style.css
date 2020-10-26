@@ -1,0 +1,16 @@
+body {
+    text-align: center;
+    font-family: 'Syne Mono', monospace;
+}
+
+#tooltip {
+    position: absolute;
+    text-align: center;
+    font: 16px;
+    color: #FFF;
+    background-color: #000;
+    border: 2px solid #fff;
+    border-radius: 8px 8px 8px 8px;
+    pointer-events: none;
+    padding: 11px;
+}
