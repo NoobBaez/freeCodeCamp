@@ -1,0 +1,21 @@
+[submodule "microservice/boilerplate-project-headerparser"]
+	path = microservice/boilerplate-project-headerparser
+	url = https://github.com/freeCodeCamp/boilerplate-project-headerparser.git
+[submodule "microservice/project-exercisetracker"]
+	path = microservice/project-exercisetracker
+	url = https://github.com/freeCodeCamp/boilerplate-project-exercisetracker.git
+[submodule "microservice/project-urlshortener"]
+	path = microservice/project-urlshortener
+	url = https://github.com/freeCodeCamp/boilerplate-project-urlshortener.git
+[submodule "qualityAssurance/american-british-english-translator"]
+	path = qualityAssurance/american-british-english-translator
+	url = https://github.com/freeCodeCamp/boilerplate-project-american-british-english-translator.git
+[submodule "qualityAssurance/metricimpconverter"]
+	path = qualityAssurance/metricimpconverter
+	url = https://github.com/freeCodeCamp/boilerplate-project-metricimpconverter.git
+[submodule "qualityAssurance/project-library"]
+	path = qualityAssurance/project-library
+	url = https://github.com/freeCodeCamp/boilerplate-project-library.git
+[submodule "qualityAssurance/sudoku-solver"]
+	path = qualityAssurance/sudoku-solver
+	url = https://git.heroku.com/sudoku-baez.git
