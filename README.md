@@ -1,5 +1,14 @@
 # freeCodeCamp
 
-🎨 <b>Responsive Web Design Projects</b>
+This repo is to store all project a have done throughout the freecodeCamp curriculum.
 
-<img src="https://raw.githubusercontent.com/NoobBaez/freeCodeCamp/master/responsiveWebDesign/tributePage/src/_Users_haniel_learn_freecodecamp_responsiveWebDesign_tributePage_src_index.html.png" width="200" height="300" title="Tribute Page"><img src="https://github.com/NoobBaez/freeCodeCamp/blob/master/responsiveWebDesign/surveyForm/src/_Users_haniel_learn_freecodecamp_responsiveWebDesign_surveyForm_src_index.html%20(1).png" width="200" height="300" title="Survey Form"><img src="https://raw.githubusercontent.com/NoobBaez/freeCodeCamp/master/responsiveWebDesign/productLandingPage/127.0.0.1_5500_src_index.html.png" width="200" height="300" title="Landing Page">
+<b>List of the 4 most exciting projects</b>
+
+<ul>
+  <li><a href="http://sturdy-things.surge.sh">Calculator 🧮</a></li>
+  <li><a href="http://economic-feeling.surge.sh">Pomodoro Clock 🍅</a></li>
+  <li><a href="sudoku-baez.herokuapp.com">Sudoku Solver 🧩</a></li>
+  <li><a href="safe-meadow-18042.herokuapp.com">American to England Translator 🔤</a></li>
+</ul>
+
+More: https://codepen.io/hanielbaez
